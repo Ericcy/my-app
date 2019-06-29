@@ -7,7 +7,7 @@ class App extends React.Component{
       人数：{this.props.num}
       <button type="button" onClick={this.props.addPeople}>加人</button>
       <button type="button" onClick={this.props.removePeople}>减人</button>
-      <button type="button" onClick={this.props.addPeopleAsync}>异步➕人</button>
+      <button type="button" onClick={this.props.addPeopleAsync}>异步加人</button>
     </div>
   }
 }
