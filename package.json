@@ -139,11 +139,13 @@
         {
           "libraryName": "antd-mobile",
           "style": "css"
-        }
+        },
+        "transform-decorators-legacy"
       ]
     ]
   },
   "devDependencies": {
-    "babel-plugin-import": "^1.12.0"
+    "babel-plugin-import": "^1.12.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5"
   }
 }
