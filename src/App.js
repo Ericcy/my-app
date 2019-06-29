@@ -1,29 +1,20 @@
-import React from 'react';
-import { Button, WhiteSpace, List } from 'antd-mobile'
+import React from 'react'
 class App extends React.Component{
-  constructor(){
-    super()
-    this.state = {
-      list: ['kdfsk','坏水电费','是快捷的方式']
-    }
-  }
-  componentWillMount(){
-    console.log('组件家在前')
-  }
-  componentDidMount(){
-    console.log('组件加载之后')
-  }
+  // constructor(){
+  //   super()
+  // }
+
   render(){
-    console.log('组件加载中....')
-    const boss = '你好'
-    return <div>react demo{boss}
-      <Button type="ghost">default</Button>
-      <WhiteSpace></WhiteSpace>
-      <List renderHeader={()=>'列表'}>
-        {this.state.list.map(v=>{
-          return <List.Item key={v}>{v}</List.Item>
-        })}
-      </List>
+    const store = this.props.store
+    const num = store.getState()
+    const addPeople = this.props.addPeople
+    const removePeople = this.props.removePeople
+    const addPeopleAsync = this.props.addPeopleAsync
+    return <div>
+      人数：{num}
+      <button type="button" onClick={()=> store.dispatch(addPeople())}>加人</button>
+      <button type="button" onClick={()=> store.dispatch(removePeople())}>减人</button>
+      <button type="button" onClick={()=> store.dispatch(addPeopleAsync())}>异步加人</button>
     </div>
   }
 }
